@@ -34,9 +34,9 @@ class OrderTest {
     void shouldShowErrorIfNameEmptyTest() {
         open("http://localhost:9999");
         SelenideElement form = $(".form");
-        form.$("[data-test-id=name] input").setValue("");
-        form.$("[data-test-id=phone] input").setValue("+79139999999");
-        form.$("[data-test-id=agreement]").click();
+        form.$("[data-test-id='name'] input").setValue("");
+        form.$("[data-test-id='phone'] input").setValue("+79139999999");
+        form.$("[data-test-id='agreement']").click();
         form.$(".button").click();
         $("[data-test-id=name].input_invalid .input__sub").shouldHave(exactText("Поле обязательно для заполнения"));
     }
